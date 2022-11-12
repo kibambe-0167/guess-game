@@ -1,0 +1,7 @@
+{
+  "name": "guess-game",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

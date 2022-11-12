@@ -1,6 +1,6 @@
 
 .heading {
-    /* background-color: red; */
+    background-color: red;
     color: #fff;
     border: .1em solid #fff;
     width: 80%;
@@ -13,6 +13,20 @@
 
 .heading h1, .content h2 {
     color: #fff;
+}
+
+.gussnumb {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border: 3px solid yellow;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gussnumb h1 {
+    font-size: 3em;
 }
 
 .content {
@@ -32,7 +46,42 @@
 }
 
 
-.content ion-button {
+.status_ {
+    background-color: rgb(50, 2, 2);
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+
+.status_ h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.logs {
+    margin-top: 20px;
+    background-color: lightblue;
+}
+
+.log {
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #000;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.status_ ion-button {
     --background: #4d0303;
     --background-hover: #9ce0be;
     --background-activated: #88f4be;

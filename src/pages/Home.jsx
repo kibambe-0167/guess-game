@@ -9,7 +9,7 @@ import {
   IonToolbar,
   useIonAlert,
 } from "@ionic/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
@@ -18,8 +18,12 @@ const Home = () => {
   const [val, setVal] = useState(null);
   const history = useHistory();
 
-  function conform_() {
-    if (val && typeof parseInt(val) == "number") {
+  useEffect(() => {
+    setVal( prev => prev = null );
+  }, [])
+
+  function confirm_() {
+    if ( val && typeof parseInt(val) == "number") {
       var numb = parseInt(val);
       if (numb > 0 && numb <= 100) {
         // alert("Alright");
@@ -44,7 +48,7 @@ const Home = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+      <IonContent fullscreen={true}>
         <div style={{ backgroundColor: "pink" }}>
           <div className="heading">
             <h1 clas> Guess My Number</h1>
@@ -71,17 +75,17 @@ const Home = () => {
               <IonButton onClick={() => setVal(0)} shape="round" expand="">
                 Reset
               </IonButton>
-              <IonButton onClick={() => conform_()} shape="round" expand="">
+              <IonButton onClick={() => confirm_()} shape="round" expand="">
                 Confirm
               </IonButton>
             </div>
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "2em" }}>
+          {/* <div style={{ textAlign: "center", marginTop: "2em" }}>
             <IonButton onClick={() => history.push("/guess")}>
               Go To Guessing
             </IonButton>
-          </div>
+          </div> */}
         </div>
       </IonContent>
     </IonPage>

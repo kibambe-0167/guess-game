@@ -1,67 +1,71 @@
-
-.heading {
-    /* background-color: red; */
-    color: #fff;
-    border: .1em solid #fff;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    padding-top: .3em;
-    padding-bottom: .6em;
+ion-content {
+  --background: pink;
+  --color: #fff;
+  --padding-top: 5em;
 }
 
-.heading h1, .content h2 {
-    color: #fff;
+.heading {
+  /* background-color: red; */
+  color: #fff;
+  border: 0.1em solid #fff;
+  width: 80%;
+  margin-bottom: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding-top: 0.3em;
+  padding-bottom: 0.6em;
+}
+
+.heading h1,
+.content h2 {
+  color: #fff;
 }
 
 .content {
-    margin-top: 10px;
-    padding-bottom: 10px;
-    border-radius: .5   em;
-    padding-top: 1px;
-    background-color: rgb(50, 2, 2);
-    text-align: center;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0.5 em;
+  padding-top: 1px;
+  background-color: rgb(50, 2, 2);
+  text-align: center;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .content h2 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
-
 
 .content ion-button {
-    --background: #4d0303;
-    --background-hover: #9ce0be;
-    --background-activated: #88f4be;
-    --background-focused: #88f4be;
-  
-    margin-left: .5em;
-    margin-right: .5em;
-    --color: #fff;
-  
-  
-    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
-  
-    --ripple-color: deeppink;
-  
-    --padding-top: 10px;
-    --padding-bottom: 10px;
+  --background: #4d0303;
+  --background-hover: #9ce0be;
+  --background-activated: #88f4be;
+  --background-focused: #88f4be;
+
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  --color: #fff;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: deeppink;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 
-
 .content ion-input {
-    --background: rgb(37, 3, 3) ;
-    --color: #fff;
-    --placeholder-color: #ddd;
-    --placeholder-opacity: .8;
-    --placeholder-font-weight:bold;
-    --padding-bottom: 10px;
-    --padding-end: 10px;
-    --padding-start: 10px;
-    --padding-top: 10px;
-    --padding-bottom: 10px;
-    font-size: 25px;
-  }
+  --background: rgb(37, 3, 3);
+  --color: #fff;
+  --placeholder-color: #ddd;
+  --placeholder-opacity: 0.8;
+  --placeholder-font-weight: bold;
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 25px;
+}

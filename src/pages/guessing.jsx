@@ -5,6 +5,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonAlert,
 } from "@ionic/react";
 import { useHistory, useLocation } from "react-router";
 import "./guessing.css";
@@ -18,6 +19,7 @@ const Guess = () => {
   const [userVal, setUserVal] = useState(null);
   const history = useHistory();
   const location = useLocation();
+  const [alert_] = useIonAlert();
 
   function random_(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -28,28 +30,33 @@ const Guess = () => {
     setUserVal((prev) => (prev = user));
 
     let g = random_(min, max);
-    setGuessNumb( prev => prev = g);
+    setGuessNumb((prev) => (prev = g));
     let n = logs.concat([g]);
-    // setLogs((prev) => (prev = n));
+    setLogs([]);
   }, []);
 
   const lower_ = () => {
     // history.push("/home")
-    if ( userVal && userVal > guessNum) {
-      alert("your number is not lower than the last suggestion");
+    if (userVal && userVal > guessNum) {
+      alert_({
+        header: "Hmmmm",
+        message: "your number is not lower than the last suggestion",
+        buttons: ["Sorry!"],
+      });
+      history.push("/");
     } else {
       setMax((prev) => (prev = guessNum));
       let gn = random_(min, guessNum);
-      let n = logs.concat([guessNum,]);
+      let n = logs.concat([guessNum]);
       setGuessNumb((prev) => (prev = gn));
-      if( gn === userVal ) {
+      if (gn == userVal) {
         history.push({
-          pathname:"/gameover",
+          pathname: "/gameover",
           state: {
-            rounds: logs.length,
-            guess: guessNum
-          }
-        })
+            rounds: logs.length + 1,
+            guess: userVal,
+          },
+        });
       }
       setLogs((prev) => (prev = n));
     }
@@ -57,24 +64,28 @@ const Guess = () => {
 
   const higher_ = () => {
     // history.push("/gameover")
-    if( userVal && userVal < guessNum  ) {
-      alert("Your number is not high than the last suggesttion");
-    }
-    else {
-      setMin( prev => prev = guessNum );
-      let gn = random_( guessNum, max );
-      let n = logs.concat([guessNum,]);
-      setGuessNumb(prev => prev = gn );
-      if( gn === userVal ) {
+    if (userVal && userVal < guessNum) {
+      alert_({
+        header: "Hmmmm",
+        message: "Your number is not high than the last suggesttion",
+        buttons: ["Sorry!"],
+      });
+      history.push("/");
+    } else {
+      setMin((prev) => (prev = guessNum));
+      let gn = random_(guessNum, max);
+      let n = logs.concat([guessNum]);
+      setGuessNumb((prev) => (prev = gn));
+      if (gn == userVal) {
         history.push({
-          pathname:"/gameover",
+          pathname: "/gameover",
           state: {
-            rounds: logs.length,
-            guess: guessNum
-          }
-        })
+            rounds: logs.length + 1,
+            guess: userVal,
+          },
+        });
       }
-      setLogs( prev => prev = n );
+      setLogs((prev) => (prev = n));
     }
   };
 
@@ -92,9 +103,7 @@ const Guess = () => {
             <h1>Opponent's Game</h1>
           </div>
 
-          <div className="gussnumb">
-            <h1>{guessNum}</h1>
-          </div>
+          <div className="gussnumb">{guessNum}</div>
 
           <div className="status_">
             <h1>Higher or Lower</h1>

@@ -19,7 +19,7 @@ const Home = () => {
   const history = useHistory();
 
   useEffect(() => {
-    setVal( prev => prev = null );
+    setVal(0);
   }, [])
 
   function confirm_() {

@@ -58,6 +58,7 @@ const Guess = () => {
           },
         });
       }
+      n = n.reverse();
       setLogs((prev) => (prev = n));
     }
   };
@@ -85,6 +86,7 @@ const Guess = () => {
           },
         });
       }
+      n = n.reverse();
       setLogs((prev) => (prev = n));
     }
   };
@@ -119,7 +121,7 @@ const Guess = () => {
           <div className="logs">
             {logs &&
               logs.length > 0 &&
-              logs.map((val, indx) => (
+              logs.reverse().map((val, indx) => (
                 <div key={indx} className="log">
                   <div>{`#${logs.length - indx}`}</div>
                   <div>Opponent's Guess:{val}</div>
